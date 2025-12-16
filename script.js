@@ -265,8 +265,8 @@
 
       if (!linkPath || linkPath.startsWith('#')) continue;
 
-      var normalizedLinkPath = linkPath.replace(/^.?//, '');
-      var normalizedCurrentPath = currentPath.replace(/^//, '');
+      var normalizedLinkPath = linkPath.replace(/^\.?\//, '');
+      var normalizedCurrentPath = currentPath.replace(/^\//, '');
 
       if (normalizedCurrentPath === '' || normalizedCurrentPath === 'index.html') {
         if (normalizedLinkPath === '' || normalizedLinkPath === 'index.html' || normalizedLinkPath === '/') {
@@ -410,9 +410,9 @@
     if (!form) return;
 
     var patterns = {
-      name: /^[a-zA-ZÀ-ÿs-']{2,50}$/,
-      email: /^[^s@]+@[^s@]+.[^s@]+$/,
-      phone: /^[ds+-()]{10,20}$/,
+      name: /^[a-zA-ZÀ-ÿ\s-']{2,50}$/,
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      phone: /^[\d\s+\-()]{10,20}$/,
       message: /^.{10,}$/
     };
 
